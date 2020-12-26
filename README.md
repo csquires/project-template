@@ -9,6 +9,7 @@ The packages include:
 * `tqdm` for progress bars. See usage in `experiments/result_manager.py`.
 * `line_profiler` for profiling code. See usage in `scratch/profile_mean_vs_std.py`.
 * `seaborn` for prettier plotting. See usage in `experiments/evaluation_manager.py`.
+* `itertools` for simplifying for-loops/list comprehensions.
 
 Some useful practices include:
 * A *ResultManager* which saves/loads the results of running different (potentially time-consuming) algorithms.
