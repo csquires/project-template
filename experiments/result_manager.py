@@ -4,6 +4,7 @@ from time import time
 import pandas as pd
 import itertools as itr
 from tqdm import tqdm
+from experiments.config import *
 
 
 class ResultManager:
@@ -13,8 +14,8 @@ class ResultManager:
         self.name = name
 
         # ensure that the directories for data and results are present
-        os.makedirs(f"experiments/data/", exist_ok=True)
-        os.makedirs(f"experiments/results/", exist_ok=True)
+        os.makedirs(DATA_FOLDER, exist_ok=True)
+        os.makedirs(RESULT_FOLDER, exist_ok=True)
 
         # create and save a dataframe of the appropriate shape to hold the results
         self.index_names = ["alg_name", "p", "trial_num"]
@@ -33,11 +34,11 @@ class ResultManager:
 
     @property
     def data_filename(self):
-        return f"experiments/data/{self.name}.npz"
+        return os.path.join(DATA_FOLDER, f"{self.name}.npz")
 
     @property
     def results_filename(self):
-        return f"experiments/results/{self.name}.pkl"
+        return os.path.join(RESULT_FOLDER, f"{self.name}.pkl")
 
     def get_data(self, overwrite=False):
         if os.path.exists(self.data_filename) and not overwrite:

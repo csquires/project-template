@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 from experiments.result_manager import ResultManager
+from experiments.config import *
 sns.set()
 
 # A dictionary mapping from each algorithm to labels allows the labels to change in the future.
@@ -26,7 +27,7 @@ class EvaluationManager:
 
     @property
     def figure_folder(self):
-        return f"experiments/figures/{self.name}"
+        return os.path.join(FIGURE_FOLDER, self.name)
 
     def plot_p_vs_accuracy(self, algs):
         plt.clf()
