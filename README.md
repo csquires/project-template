@@ -15,6 +15,8 @@ Some useful practices include:
 * A *ResultManager* which saves/loads the results of running different (potentially time-consuming) algorithms.
 * An *EvaluationManager* which handles plotting results.
 * A `setup.sh` file which helps make the code easier to reproduce.
+* Don't use Jupyter notebooks too heavily - they lead to a pretty messy code base. An example
+of how I might use it to generate some "final" figures is in `experiments/notebooks/example-notebook.ipynb`.
 * Code/data/result/figure organization.
 
 To see how these are put into use, run:
